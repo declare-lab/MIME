@@ -18,7 +18,7 @@ Dataset is already preprocessed and contained in this repo, [here](https://githu
 ```sh
 python main.py
 ```
-This will also generate 'summary.txt' file under default save path 'save/test/'
+This will also generate output file on test under default save path `save/test/summary.txt`
 
 ### Testing
 ```sh
