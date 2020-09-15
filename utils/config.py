@@ -22,7 +22,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--dataset", type=str, default="empathetic")
 
 parser.add_argument("--emo_input", type=str, default="self_att") # cross_att; self_att
-parser.add_argument("--emo_combine", type=str, default="att") # att; gate
+parser.add_argument("--emo_combine", type=str, default="gate") # att; gate
 parser.add_argument("--decoder", type=str, default="single") # single
 parser.add_argument("--saved_model_path", type=str, default=None) # this arg is deprecated, use save_path instead
 parser.add_argument("--vae", type=bool, default=False) # whether to use vae randomness and to add in the vae loss
@@ -30,37 +30,37 @@ parser.add_argument("--eq6_loss", type=bool, default=False)
 parser.add_argument("--vader_loss", type=bool, default=False) # add vader loss
 parser.add_argument("--init_emo_emb", action="store_true")
  
-parser.add_argument("--hidden_dim", type=int, default=100)
-parser.add_argument("--emb_dim", type=int, default=100)
+parser.add_argument("--hidden_dim", type=int, default=300)
+parser.add_argument("--emb_dim", type=int, default=300)
 parser.add_argument("--batch_size", type=int, default=16)
 parser.add_argument("--lr", type=float, default=0.0001)
 parser.add_argument("--max_grad_norm", type=float, default=2.0)
 parser.add_argument("--beam_size", type=int, default=5)
 parser.add_argument("--save_path", type=str, default="save/test/")
 parser.add_argument("--save_path_dataset", type=str, default="save/")
-parser.add_argument("--cuda", action="store_true")
+parser.add_argument("--cuda", default=True, action="store_true")
 
 parser.add_argument("--pointer_gen", action="store_true")
 parser.add_argument("--oracle", action="store_true")
-parser.add_argument("--basic_learner", action="store_true")
+parser.add_argument("--basic_learner", default=True, action="store_true")
 parser.add_argument("--project", action="store_true")
 parser.add_argument("--topk", type=int, default=0)
 parser.add_argument("--l1", type=float, default=.0)
-parser.add_argument("--softmax", action="store_true")
+parser.add_argument("--softmax", default=True, action="store_true")
 parser.add_argument("--mean_query", action="store_true")
-parser.add_argument("--schedule", type=float, default=0)
+parser.add_argument("--schedule", type=float, default=10000)
 
 
 parser.add_argument("--large_decoder", action="store_true")
 parser.add_argument("--multitask", action="store_true")
 parser.add_argument("--is_coverage", action="store_true")
 parser.add_argument("--use_oov_emb", action="store_true")
-parser.add_argument("--pretrain_emb", action="store_true")
+parser.add_argument("--pretrain_emb", default=True, action="store_true")
 parser.add_argument("--test", action="store_true")
-parser.add_argument("--model", type=str, default="seq2seq")
+parser.add_argument("--model", type=str, default="mimic")
 parser.add_argument("--weight_sharing", action="store_true")
-parser.add_argument("--label_smoothing", action="store_true")
-parser.add_argument("--noam", action="store_true")
+parser.add_argument("--label_smoothing", default=True, action="store_true")
+parser.add_argument("--noam", default=True, action="store_true")
 parser.add_argument("--universal", action="store_true")
 parser.add_argument("--act", action="store_true")
 parser.add_argument("--act_loss_weight", type=float, default=0.001)
@@ -68,8 +68,8 @@ parser.add_argument("--act_loss_weight", type=float, default=0.001)
 parser.add_argument("--emb_file", type=str)
 
 ## transformer 
-parser.add_argument("--hop", type=int, default=6)
-parser.add_argument("--heads", type=int, default=1)
+parser.add_argument("--hop", type=int, default=1)
+parser.add_argument("--heads", type=int, default=2)
 parser.add_argument("--depth", type=int, default=40)
 parser.add_argument("--filter", type=int, default=50)
 

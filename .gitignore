@@ -1,6 +1,7 @@
 **/*.png
 **/*.csv
 **/*.txt
+save
 
 __pycache__/
 *.py[cod]

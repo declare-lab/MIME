@@ -19,9 +19,6 @@ from model.common_layer import write_config
 from utils.data_reader import load_dataset
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-# torch.manual_seed(0)
-# torch.backends.cudnn.deterministic = True
-# torch.backends.cudnn.benchmark = False
 
 class Dataset(data.Dataset):
     """Custom data.Dataset compatible with data.DataLoader."""
@@ -46,9 +43,6 @@ class Dataset(data.Dataset):
         item["target_text"] = self.data["target"][index]
         item["emotion_text"] = self.data["emotion"][index]
 
-        # Vader
-        # item["context_emotion_scores"] = self.analyzer.polarity_scores(' '.join([' '.join(l) for l  in self.data["context"][index]]))
-        # item["target_emotion_scores"] = self.analyzer.polarity_scores(' '.join(self.data["target"][index]))
         item["context_emotion_scores"] = self.analyzer.polarity_scores(' '.join(self.data["context"][index][0]))
 
         item["context"], item["context_mask"] = self.preprocess(item["context_text"])
@@ -133,20 +127,14 @@ def prepare_data_seq(batch_size=32):
     logging.info("Vocab  {} ".format(vocab.n_words))
 
     dataset_train = Dataset(pairs_tra, vocab)
-    data_loader_tra = torch.utils.data.DataLoader(dataset=dataset_train,
-                                                 batch_size=batch_size,
+    data_loader_tra = torch.utils.data.DataLoader(dataset=dataset_train, batch_size=batch_size,
                                                  shuffle=True, collate_fn=collate_fn)
 
     dataset_valid = Dataset(pairs_val, vocab)
-    data_loader_val = torch.utils.data.DataLoader(dataset=dataset_valid,
-                                                 batch_size=batch_size,
+    data_loader_val = torch.utils.data.DataLoader(dataset=dataset_valid, batch_size=batch_size,
                                                  shuffle=True, collate_fn=collate_fn)
-    #print('val len:',len(dataset_valid))
     dataset_test = Dataset(pairs_tst, vocab)
-    data_loader_tst = torch.utils.data.DataLoader(dataset=dataset_test,
-                                                 batch_size=1,
+    data_loader_tst = torch.utils.data.DataLoader(dataset=dataset_test, batch_size=1,
                                                  shuffle=False, collate_fn=collate_fn)
-    # data_loader_tst = torch.utils.data.DataLoader(dataset=dataset_test, batch_size=1, shuffle=False, collate_fn=collate_fn, sampler=SubsetRandomSampler(list(range(20))))
-
     write_config()
     return data_loader_tra, data_loader_val, data_loader_tst, vocab, len(dataset_train.emo_map)
