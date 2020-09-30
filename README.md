@@ -2,7 +2,7 @@
 MIMicking Emotion for empathetic response
 
 ## Overview of MIME
-![Alt text](figs/mime.png?raw=true "Architecture of MIME")
+![Alt text](figs/MIME.png?raw=true "Architecture of MIME")
 
 ## Setup
 Download GloVe vectors from [here](https://www.kaggle.com/thanakomsn/glove6b300dtxt/data) and put it into `vectors/` folder
