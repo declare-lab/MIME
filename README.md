@@ -17,7 +17,7 @@ For reproducibility purposes, we provide model output on test dataset as `./outp
 you can download the model and move it under `save/saved_model`
 
 ## Run code
-Dataset is already preprocessed and contained in this repo. we used proprocessed data provided by [empathetic dialogue](https://github.com/HLTCHKUST/MoEL/tree/master/empathetic-dialogue).
+Dataset is already preprocessed and contained in this repo. we used proprocessed data provided in this link https://github.com/HLTCHKUST/MoEL/tree/master/empathetic-dialogue.
 
 ### Training
 ```sh
