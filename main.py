@@ -16,10 +16,6 @@ from utils import config
 from model.common_layer import count_parameters, make_infinite, evaluate
 from model.trainer import Train_MIME
 
-torch.manual_seed(1234)
-torch.backends.cudnn.deterministic = True
-torch.backends.cudnn.benchmark = False
-np.random.seed(1234)
 
 data_loader_tra, data_loader_val, data_loader_tst, vocab, program_number = prepare_data_seq(batch_size=config.batch_size)
 
