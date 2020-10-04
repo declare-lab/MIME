@@ -1,8 +1,10 @@
 # MIME
-This repository contains PyTorch implementations of the models from the paper Utterance-level Dialogue Understanding: [An Empirical Study MIME: MIMicking Emotions for Empathetic Response Generation](./MIME.pdf).
+This repository contains pytorch implementations of the models from the paper Utterance-level Dialogue Understanding: [An Empirical Study MIME: MIMicking Emotions for Empathetic Response Generation](./MIME.pdf).
 
 ## Overview of MIME
 ![Alt text](figs/MIME.png?raw=true "Architecture of MIME")
+
+Current approaches to empathetic response generation view the set of emotions expressed in the input text as a flat structure, where all the emotions are treated uniformly. We argue that empathetic responses often mimic the emotion of the user to a varying degree, depending on its positivity or negativity and content. We show that the consideration of these polarity-based emotion clusters and emotional mimicry results in improved empathy and contextual relevance of the response as compared to the state-of-the-art. Also, we introduce stochasticity into the emotion mixture that yields emotionally more varied empathetic responses than the previous work. We demonstrate the importance of these factors to empathetic response generation using both automatic- and human-based evaluations.
 
 ## Setup
 Download GloVe vectors from [here](https://www.kaggle.com/thanakomsn/glove6b300dtxt/data) and put it into `vectors/` folder
