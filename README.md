@@ -32,5 +32,5 @@ python main.py --test --save_path [output_file_path]
 By default it will generate `save/test/summary.txt` as output
 
 ## Citation
-TODO
+`An Empirical Study MIME: MIMicking Emotions for Empathetic Response Generation. Navonil Majumder, Pengfei Hong, Shanshan Peng, Jiankun Lu, Deepanway Ghosal, Alexander Gelbukh, Rada Mihalcea, Soujanya Poria. EMNLP (2020).`
 
