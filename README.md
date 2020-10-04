@@ -1,5 +1,5 @@
 # MIME
-MIMicking Emotion for empathetic response
+This repository contains pytorch implementations of the models from the paper Utterance-level Dialogue Understanding: [An Empirical Study MIME: MIMicking Emotions for Empathetic Response Generation](./MIME.pdf)
 
 ## Overview of MIME
 ![Alt text](figs/MIME.png?raw=true "Architecture of MIME")
