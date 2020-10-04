@@ -13,10 +13,9 @@ Next Install the required libraries:
 1. Assume you are using conda and have installed Pytorch >= 1.6
 2. Install from mime.yml by `conda env update --file mime.yml`
 
-For reproducibility purposes, we provide weights & output result on test dataset in [google drive](https://drive.google.com/drive/folders/1Qab9mH6n6qPrVTP4vtQ0-oGa6GYrD8Lm?usp=sharing). 
-you can download the model and move it to `save/saved_model`
+For reproducibility purposes, we provide model output on test dataset as `./output.txt` and weights in [google drive](https://drive.google.com/drive/folders/1Qab9mH6n6qPrVTP4vtQ0-oGa6GYrD8Lm?usp=sharing). 
+you can download the model and move it under `save/saved_model`
 
- > note: `model1` is the model we used and reported in paper, you can also use `model2` which is a better version by retraining the same model. The difference between `model1` and `model2` is the random seed
 
 ## Run code
 Dataset is already preprocessed and contained in this repo, [here](https://github.com/HLTCHKUST/MoEL/tree/master/empathetic-dialogue) is the source.
