@@ -1,5 +1,5 @@
 # MIME
-This repository contains PyTorch implementations of the models from the paper [An Empirical Study MIME: MIMicking Emotions for Empathetic Response Generation](./MIME.pdf).
+This repository contains PyTorch implementation of empathetic-response generation model [MIME: MIMicking Emotions for Empathetic Response Generation](./MIME.pdf).
 
 ## Overview of MIME
 ![Alt text](figs/MIME.png?raw=true "Architecture of MIME")
