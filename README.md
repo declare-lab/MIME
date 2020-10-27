@@ -32,5 +32,5 @@ python main.py --test --save_path [output_file_path]
 > Note: During testing, the model will load weight under `save/saved_model`, and by default it will generate `save/test/summary.txt` as output file on test dataset.
 
 ## Citation
-`An Empirical Study MIME: MIMicking Emotions for Empathetic Response Generation. Navonil Majumder, Pengfei Hong, Shanshan Peng, Jiankun Lu, Deepanway Ghosal, Alexander Gelbukh, Rada Mihalcea, Soujanya Poria. EMNLP (2020).`
+`MIME: MIMicking Emotions for Empathetic Response Generation. Navonil Majumder, Pengfei Hong, Shanshan Peng, Jiankun Lu, Deepanway Ghosal, Alexander Gelbukh, Rada Mihalcea, Soujanya Poria. EMNLP (2020).`
 
