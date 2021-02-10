@@ -17,6 +17,11 @@ from model.common_layer import count_parameters, make_infinite, evaluate
 from model.trainer import Train_MIME
 
 
+torch.manual_seed(1234)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+np.random.seed(1234)
+
 data_loader_tra, data_loader_val, data_loader_tst, vocab, program_number = prepare_data_seq(batch_size=config.batch_size)
 
 if(config.test):
@@ -29,7 +34,7 @@ if(config.test):
     loss_test, ppl_test, bce_test, acc_test, bleu_score_g, bleu_score_b, bleu_score_t, ref_results = evaluate(model, data_loader_tst, ty="test",
                                                                                max_dec_step=50, write_summary=True)
 
-    file_summary = config.save_path + "summary.txt"
+    file_summary = config.save_path + "output.txt"
     with open(file_summary, 'w') as the_file:
         the_file.write("EVAL\tLoss\tPPL\tAccuracy\tBleu_g\tBleu_b\tBleu_t\n")
         the_file.write(
@@ -96,7 +101,7 @@ model.epoch = 1
 loss_test, ppl_test, bce_test, acc_test, bleu_score_g, bleu_score_b, bleu_score_t, ref_results = evaluate(model, data_loader_tst, ty="test",
                                                                                max_dec_step=50, write_summary=True)
 
-file_summary = config.save_path + "summary.txt"
+file_summary = config.save_path + "output.txt"
 with open(file_summary, 'w') as the_file:
     the_file.write("### COMMENT: If using vader, score > 0 will be treated as positive emotion and score < 0 will be treated as negative emotion ### \n")
     the_file.write("EVAL\tLoss\tPPL\tAccuracy\tBleu_g\tBleu_b\tBleu_t\n")

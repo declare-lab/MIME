@@ -10,8 +10,8 @@ Current approaches to empathetic response generation view the set of emotions ex
 Download GloVe vectors from [here](https://www.kaggle.com/thanakomsn/glove6b300dtxt/data) and put it into `vectors/` folder
 
 Next Install the required libraries:
-1. Assume you are using conda and have installed Pytorch >= 1.6
-2. Install from mime.yml by `conda env update --file mime.yml`
+1. Assume you are using conda
+2. Install libraries by `pip install -r requirement.txt`
 
 For reproducibility purposes, we provide model output on test dataset as `./output.txt` and weights in [google drive](https://drive.google.com/drive/folders/1Qab9mH6n6qPrVTP4vtQ0-oGa6GYrD8Lm?usp=sharing). 
 you can download the model and move it under `save/saved_model`
@@ -23,13 +23,13 @@ Dataset is already preprocessed and contained in this repo. we used proprocessed
 ```sh
 python main.py
 ```
-> Note: This will also generate output file on test dataset as `save/test/summary.txt`.
+> Note: This will also generate output file on test dataset as `save/test/output.txt`.
 
 ### Testing
 ```sh
 python main.py --test --save_path [output_file_path]
 ```
-> Note: During testing, the model will load weight under `save/saved_model`, and by default it will generate `save/test/summary.txt` as output file on test dataset.
+> Note: During testing, the model will load weight under `save/saved_model`, and by default it will generate `save/test/output.txt` as output file on test dataset.
 
 ## Citation
 `MIME: MIMicking Emotions for Empathetic Response Generation. Navonil Majumder, Pengfei Hong, Shanshan Peng, Jiankun Lu, Deepanway Ghosal, Alexander Gelbukh, Rada Mihalcea, Soujanya Poria. EMNLP (2020).`
